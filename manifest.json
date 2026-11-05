@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "AppFolio Pre-Closing Automator",
+  "version": "2.1.0",
+  "description": "Automatiza la descarga de Income Statements por propiedad gestionando pestañas nuevas en AppFolio.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.appfolio.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.appfolio.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

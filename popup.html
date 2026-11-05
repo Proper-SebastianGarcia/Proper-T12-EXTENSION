@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AppFolio Automator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Pre-Closing Automator (8 Propiedades)</h2>
+    
+    <div class="status-box" id="tabStatus">
+      Verificando pestaña de AppFolio...
+    </div>
+
+    <div class="form-group">
+      <label for="monthYearInput">Mes y Año del Reporte:</label>
+      <input type="month" id="monthYearInput">
+    </div>
+
+    <div class="actions">
+      <button id="btnStart" class="btn primary" disabled>Iniciar Automatización</button>
+      <button id="btnStop" class="btn danger" style="display:none;">Detener Proceso</button>
+    </div>
+
+    <div class="progress-section" id="progressSection" style="display:none;">
+      <h3>Progreso General</h3>
+      <div class="stat-row"><span>Total Propiedades:</span> <strong id="lblTotal">8</strong></div>
+      <div class="stat-row"><span>Procesadas:</span> <strong id="lblProcessed">0</strong></div>
+      <div class="stat-row"><span>Completadas:</span> <strong id="lblSuccess">0</strong></div>
+      <div class="stat-row"><span>Con Errores:</span> <strong id="lblErrors">0</strong></div>
+      <div class="stat-row"><span>Estado:</span> <span id="lblCurrentState">Inactivo</span></div>
+      
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </div>
+
+    <div class="logs-container" id="logsContainer">
+      <!-- Registro de eventos en tiempo real -->
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
